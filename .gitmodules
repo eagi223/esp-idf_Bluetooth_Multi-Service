@@ -1,0 +1,3 @@
+[submodule "components/espfs"]
+	path = components/espfs
+	url = https://github.com/jkent/esp32-espfs.git

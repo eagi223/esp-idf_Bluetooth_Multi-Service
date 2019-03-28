@@ -1,0 +1,41 @@
+menu "Example Configuration"
+	config EXAMPLE_FILESYSTEM_TYPE
+		string
+		default "None" if EXAMPLE_FS_TYPE_NONE
+		default "SPIFFS" if EXAMPLE_FS_TYPE_SPIFFS
+		default "FatFS" if EXAMPLE_FS_TYPE_FAT
+		default "LittleFS" if EXAMPLE_FS_TYPE_LFS
+
+		choice
+			prompt "RW filesystem type"
+			default EXAMPLE_FS_TYPE_NONE
+			help
+				Select read-write internal file system type.  It is overlayed on the read-only fs.
+				
+			config EXAMPLE_FS_TYPE_NONE
+				bool "None"
+#			config EXAMPLE_FS_TYPE_SPIFFS
+#				bool "SPIFFS"
+			config EXAMPLE_FS_TYPE_FAT
+				bool "FatFS"
+#			config EXAMPLE_FS_TYPE_LFS
+#				bool "LittleFS"
+		endchoice
+		
+	config EXAMPLE_RO_FILESYSTEM_TYPE
+		string
+		default "None" if EXAMPLE_ROFS_TYPE_NONE
+		default "ESPFS" if EXAMPLE_ROFS_TYPE_ESPFS
+
+		choice
+			prompt "RO filesystem type"
+			default EXAMPLE_ROFS_TYPE_NONE
+			help
+				Select read-only file system type.  It is the base fs compiled into the image.
+				
+			config EXAMPLE_ROFS_TYPE_NONE
+				bool "None"
+			config EXAMPLE_ROFS_TYPE_ESPFS
+				bool "ESPFS"
+		endchoice
+endmenu
