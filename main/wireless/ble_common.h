@@ -17,5 +17,6 @@
     extern const uint8_t char_prop_read_write;
     extern const uint8_t char_prop_read_write_notify;
     extern const uint8_t char_prop_write;
+    extern const uint8_t char_prop_write_notify;
 
 #endif /* BLE_COMMON_H_ */

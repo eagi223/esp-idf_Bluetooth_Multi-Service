@@ -15,13 +15,5 @@ APP_SRCDIRS     += $(APP_DIR).
 APP_SRCDIRS     += $(APP_DIR)wireless
 APP_SRCDIRS		+= $(APP_DIR)wireless/ble_services
 
-APP_OBJS        := $(APP_DIR)main.o 
-APP_OBJS		+= $(APP_DIR)wireless/ble_interface.o 
-APP_OBJS		+= $(APP_DIR)wireless/ble_common.o 
-APP_OBJS		+= $(APP_DIR)wireless/ble_gap.o
-APP_OBJS		+= $(APP_DIR)wireless/ble_gatt_server.o
-APP_OBJS		+= $(APP_DIR)wireless/ble_services/ble_service_wifi_config.o
-
 COMPONENT_ADD_INCLUDEDIRS := $(APP_INCLUDEDIRS)
 COMPONENT_SRCDIRS		  := $(APP_SRCDIRS)
-COMPONENT_OBJS            := $(APP_OBJS)

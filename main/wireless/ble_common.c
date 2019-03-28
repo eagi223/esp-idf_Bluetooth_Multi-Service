@@ -12,3 +12,4 @@ const uint8_t char_prop_read_notify       = ESP_GATT_CHAR_PROP_BIT_READ | ESP_GA
 const uint8_t char_prop_read_write        = ESP_GATT_CHAR_PROP_BIT_WRITE | ESP_GATT_CHAR_PROP_BIT_READ;
 const uint8_t char_prop_read_write_notify = ESP_GATT_CHAR_PROP_BIT_WRITE | ESP_GATT_CHAR_PROP_BIT_READ | ESP_GATT_CHAR_PROP_BIT_NOTIFY;
 const uint8_t char_prop_write             = ESP_GATT_CHAR_PROP_BIT_WRITE;
+const uint8_t char_prop_write_notify      = ESP_GATT_CHAR_PROP_BIT_WRITE | ESP_GATT_CHAR_PROP_BIT_NOTIFY;

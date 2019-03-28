@@ -14,6 +14,8 @@
 #define TAG "ble gap"
 
 #define BLE_DEVICE_NAME "BLE Test Device"
+#define ADV_INT_MIN					(80) // 100ms  Conversion: (Time (ms) = N * 1.25 ms) Range: 0x0006 (7.5ms) to 0x0C80 (400s)
+#define ADV_INT_MAX					(160) // 200ms
 
 static uint8_t adv_config_done = 0;
 
@@ -55,8 +57,8 @@ static uint8_t adv_config_done = 0;
 		.set_scan_rsp        = false,
 		.include_name        = true,
 		.include_txpower     = true,
-		.min_interval        = 0x20,
-		.max_interval        = 0x40,
+    .min_interval        = ADV_INT_MIN,
+    .max_interval        = ADV_INT_MAX,
 		.appearance          = 0x00,
 		.manufacturer_len    = 0,    //TEST_MANUFACTURER_DATA_LEN,
 		.p_manufacturer_data = NULL, //test_manufacturer,
@@ -72,8 +74,8 @@ static uint8_t adv_config_done = 0;
 		.set_scan_rsp        = true,
 		.include_name        = true,
 		.include_txpower     = true,
-		.min_interval        = 0x20,
-		.max_interval        = 0x40,
+    .min_interval        = ADV_INT_MIN,
+    .max_interval        = ADV_INT_MAX,
 		.appearance          = 0x00,
 		.manufacturer_len    = 0, //TEST_MANUFACTURER_DATA_LEN,
 		.p_manufacturer_data = NULL, //&test_manufacturer[0],
@@ -86,8 +88,8 @@ static uint8_t adv_config_done = 0;
 #endif /* CONFIG_SET_RAW_ADV_DATA */
 
 static esp_ble_adv_params_t adv_params = {
-    .adv_int_min         = 0x20,
-    .adv_int_max         = 0x40,
+    .adv_int_min         = ADV_INT_MIN,
+    .adv_int_max         = ADV_INT_MAX,
     .adv_type            = ADV_TYPE_IND,
     .own_addr_type       = BLE_ADDR_TYPE_PUBLIC,
     .channel_map         = ADV_CHNL_ALL,
