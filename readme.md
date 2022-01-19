@@ -1,12 +1,11 @@
-This goal for this project is to provide a template for modular, quick and easy BLE Gatt Server development on the ESP32 using the ESP IDF. To facilitate this, the ble service table example from the ESP IDF was modified and broken into four main sections. This example should run without any need for edits. 
+This goal for this project is to provide a template for modular BLE Gatt Server development on the ESP32 using the ESP IDF (Bluedroid stack). To facilitate this, the ble service table example from the ESP IDF was modified and broken into four main sections. This example should run without any need for edits. 
+
+There is a companion Android/iOS App which is useful to demonstrate the basic functionality of this GATT Server.  See https://github.com/phatpaul/ble-ftp-cordova-example
 
 ### Requirements:
+* ESP-IDF 3.x (4+ is not supported yet.  PR is welcome!)
 * min 4mb ram configured in make menuconfig/Serial flasher config/Flash size
 * ble enabled in make menuconfig/Component config/Bluetooth/Bluetooth
-* min ESP-IDF v3.0 (should work, but have only tested on v3.1 beta)
-
-
-This is a work in progress and was just quickly thrown together and generalized from code in another project! I'm not currently focusing a lot of time on it, but more adding to it as I fine tune the files in projects that I'm currently using this structure in.
 
 Feel free to PR the repo. I'll try to get changes merged quickly.
 
